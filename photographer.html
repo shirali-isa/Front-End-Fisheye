@@ -2,37 +2,122 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://kit.fontawesome.com/0a1e7f6dec.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
+
   <body>
+    <div class="overlay"></div>
+
+    <!-- lightbox -->
+    <dialog class="lightbox-modal" open>
+      <i class="fa-solid fa-xmark closemodal"></i>
+        <div class="lightbox-modal-content">
+          <i class="fa-solid fa-angle-left prev"></i>
+            <div class="lightbox-media"></div>
+          <i class="fa-solid fa-angle-right next"></i>
+        </div>
+    </dialog>
+    
     <header>
       <a href="index.html">
         <img src="assets/images/logo.png" alt="Fisheye Home Page" class="logo" />
       </a>
     </header>
     <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="scripts/pages/photographer.js" ></script>
+        <div class="photograph-header">
+          <article>
+            <div class="description">
+              <h2></h2>
+              <div class="localisation"></div>
+              <p class="paragraph"></p>
+            </div>
+            <button class="contact_button contactbutton" >Contactez-moi</button>
+            <img class="photograph-img" >
+          </article>
+        </div>
+
+        <!-- trier -->
+
+        <div class="sort" >
+          <label for="sorting">Trier par</label>
+          <select name="sort" id="sorting" >
+            <option value=""></option>
+            <option value="popularite" class="sortPopuler">Popularité</option>
+            <option value="date" class="sortDate">Date</option>
+            <option value="titre" class="sortTitle">Titre</option>
+          </select>
+        </div>
+    
+        <div class="media" >
+          <!-- <div class="imgcard">
+            <a href="" class="mediaA">
+              <img src="" alt="" class="mediaimage">
+            </a>
+            <div class="description-img">
+              <p class="imgtitle"></p>
+              <div class="likediv">
+                <p class="likenumber"></p>
+                <i class="fa-solid fa-heart likeicon"></i>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="like-price"></div>
+
+
+        <!-- modal -->
+
+        <div id="contact_modal">
+          <div class="modal">
+            <header>
+              <h2 class="modaltitle">Contactez-moi</h2>
+              <img class="closemodal" src="assets/icons/close.svg"  />
+            </header>
+            <form>
+              <div class="formdata">
+                <label for="first">Prénom</label>
+                <input
+                class="text-control" 
+                type="text"
+                id="first"
+                name="first"/>
+              </div>
+              <div class="formdata">
+                <label for="last">Nom</label>
+                <input
+                class="text-control" 
+                type="text"
+                id="last"
+                name="last"/>
+              </div>
+              <div class="formdata">
+                <label for="email">Email</label>
+                <input
+                class="text-control" 
+                type="email"
+                id="email"
+                name="email"/>
+              </div>
+              <div class="formdata">
+                <label for="message">Votre message</label>
+                <textarea
+                id="message"
+                class="textarea text-control"></textarea>
+              </div>
+              <button class="contact_button sendbutton">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    
+    <script src="scripts/utils/contactForm.js" type="module"></script>
+    <script src="scripts/pages/photographer.js" type="module"></script>
   </body>
 </html>
