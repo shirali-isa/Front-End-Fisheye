@@ -63,7 +63,7 @@ h1 {
     width: 200px;
 }
 
-.photograph-header article img {
+.photograph-img {
     object-fit: cover;
     border-radius: 50%;
     height: 200px;
@@ -87,14 +87,4 @@ h1 {
 .price {
     color: gray;
     
-}
-
-
-/* media */
-.media {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 300px;
 }
